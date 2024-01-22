@@ -2,5 +2,9 @@
 #include "lib/canvas.c"
 
 int main(){
-	printf("%i",row(),col());
+	canvas_init();
+	while(1){
+		canvas_clear();
+		system("sleep 1");
+	}
 }
