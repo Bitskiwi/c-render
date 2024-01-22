@@ -17,33 +17,22 @@ int col(){
 	return system("tput cols");
 }
 
-///////////////////
-// CANVAS DECLARATION
-///////////////////
-
-int canvas_row;
-int canvas_col;
-
-char* canvas; // NOTE: need to make this dynamic so canvas_reset can adapt to resized terminal
-
-void canvas_init(){
-	canvas_row = row();
-	canvas_col = col();
-
-	canvas = (char*)malloc((canvas_row * canvas_col) * sizeof(int));
+char canvas_make(){
+	char matrix[row()][col()];
+	return matrix;
 }
 
-void canvas_reset(){
-	for(int y; y < canvas_row; y++){
-		for(int x; x < canvas_col; x++){
+void canvas_reset(char canvas){
+	for(int y; y < row(); y++){
+		for(int x; x < col(); x++){
 			canvas[y][x] = '0';
 		}
 	}
 }
 
-void canvas_render(){
-	for(int y; y < canvas_row; y++){
-		for(int x; x < canvas_col; x++){
+void canvas_render(char canvas){
+	for(int y; y < row(); y++){
+		for(int x; x < col(); x++){
 			printf("%c", canvas[y][x]);
 		}
 		printf("\n");

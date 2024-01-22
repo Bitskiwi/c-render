@@ -2,9 +2,9 @@
 #include "lib/canvas.c"
 
 int main(){
-	canvas_init();
+	char canvas = canvas_make();
 	while(1){
-		canvas_clear();
+		canvas_clear(canvas);
 		system("sleep 1");
 	}
 }
