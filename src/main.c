@@ -1,16 +1,13 @@
+// INCLUDES
+
 #include <stdio.h>
 #include "lib/canvas.c"
 
-int main(){
-	char canvas = canvas_make();
-	while(1){
-		canvas_reset(canvas);
-		canvas_render(canvas);
-		printf("%c", canvas[10][10]);
-		char input;
-		scanf("%c", &input);
-		if(input == 'q'){
-			break;
-		}
-	}
+// MAIN
+
+int main(){                                                                    // define main function
+	struct canvas surface = new_canvas(5,5);                                   // create a canvas 5x5
+	surface = reset_canvas(surface);                                           // fill canvas with blank chars
+	surface = write_canvas(surface, 'A', 1, 1);                                // write to surface 'A' at (1,1)
+	render_canvas(surface);                                                    // render the canvas
 }
