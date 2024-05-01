@@ -24,7 +24,7 @@ struct canvas new_canvas(int w, int h){                                        /
 struct canvas reset_canvas(struct canvas surface){                             // function to fill canvas with blank chars
 	for(int y = 0; y < surface.h; y++){                                        // iterate through rows stopping at set height
 		for(int x = 0; x < surface.w; x++){                                    // iterate through coloumns stopping at set width
-			surface.matrix[y][x] = '#';                                        // matrix position (x,y) is now ' ' blank char
+			surface.matrix[y][x] = '.';                                        // matrix position (x,y) is now ' ' blank char
 		}
 	}
 	return surface;                                                            // return modified canvas
@@ -44,7 +44,7 @@ void render_canvas(struct canvas surface){                                     /
 
 // CANVAS DRAW
 
-struct canvas write_canvas(struct canvas surface, char subject, int x, int y){ // make a function to write a character to canvas
+struct canvas draw_canvas(struct canvas surface, char subject, int x, int y){  // make a function to write a character to canvas
 	surface.matrix[y][x] = subject;                                            // in surface matrix set the position (x,y) to subject
 	return surface;                                                            // return modified canvas
 }
