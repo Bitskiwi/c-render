@@ -5,7 +5,7 @@
 
 // DRAW LINE FUNCTION
 
-struct canvas draw_line(struct canvas surface, int x1, int y1, int x2, int y2){// create a function to draw line to canvas
+struct canvas draw_line(struct canvas surface, int x1, int y1, int x2, int y2){          // create a function to draw line to canvas
 	int dx = x2 - x1;                                                          // define distance between first and last x coordinate
 	int dy = y2 - y1;                                                          // define distance between first and last y coordinate
 	for(int x = x1; x < x2; x++){                                              // iterate through x values from p1 to p2
@@ -17,4 +17,10 @@ struct canvas draw_line(struct canvas surface, int x1, int y1, int x2, int y2){/
 		surface = draw_canvas(surface, '#', x, y);                             // draw the point
 	}
 	return surface;                                                            // return modified canvas
+}
+
+struct canvas draw_rect(struct canvas surface, int x, int y, int w, int h){    // create a function to draw a rectangle
+	draw_line(x, y, x, y+h);                                                   // draw left side of shape
+	draw_line(x, y+h, x+w, y+h);                                               // draw bottom of shape
+	// finish this function
 }
