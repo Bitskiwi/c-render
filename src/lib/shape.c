@@ -19,10 +19,31 @@ struct canvas draw_line(struct canvas surface, int x1, int y1, int x2, int y2){ 
 	return surface;                                                            // return modified canvas
 }
 
+// DRAW RECT FUNCTION
+
 struct canvas draw_rect(struct canvas surface, int x, int y, int w, int h){    // create a function to draw a rectangle
-	surface = draw_line(surface, x, y, x, y+h);                                          // draw left side of shape
-	surface = draw_line(surface, x, y+h, x+w, y+h);                                      // draw bottom of shape
-	surface = draw_line(surface, x+w, y, x+w, y+h);                                      // draw right side of shape
-	surface = draw_line(surface, x, y, x+w, y);                                          // draw top of shape
+	surface = draw_line(surface, x, y, x, y+h);                                // draw left side of shape
+	surface = draw_line(surface, x, y+h, x+w, y+h);                            // draw bottom of shape
+	surface = draw_line(surface, x+w, y, x+w, y+h);                            // draw right side of shape
+	surface = draw_line(surface, x, y, x+w, y);                                // draw top of shape
+	return surface;
+}
+
+// DRAW CIRCLE
+
+struct canvas draw_ellipse(struct canvas surface, int x, int y, int rad){
+	int t1 = rad / 16;
+	x = rad;
+	y = 0;
+	while(x < y){
+		surface = draw_canvas(surface, '#', x, y);
+		y++;
+		t1 += y;
+		int t2 = t1 - x;
+		if(t2 >= 0){
+			t1 = t2;
+			x--;
+		}
+	}
 	return surface;
 }

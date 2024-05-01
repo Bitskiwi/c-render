@@ -11,5 +11,6 @@ int main(){                                                                    /
 	surface = draw_canvas(surface, 'B', 10, 1);                                // write to surface 'A' at (10,1)
 	surface = draw_line(surface, 0, 0, 10, 10);                                // draw line from p1 to p2 on canvas
 	surface = draw_rect(surface, 12, 12, 9, 9);                                // draw rect 5x5 at (12,12)
+	surface = draw_circ(surface, 15, 20, 8);
 	render_canvas(surface);                                                    // render the canvas
 }
