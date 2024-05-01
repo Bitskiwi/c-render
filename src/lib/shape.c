@@ -20,7 +20,9 @@ struct canvas draw_line(struct canvas surface, int x1, int y1, int x2, int y2){ 
 }
 
 struct canvas draw_rect(struct canvas surface, int x, int y, int w, int h){    // create a function to draw a rectangle
-	draw_line(x, y, x, y+h);                                                   // draw left side of shape
-	draw_line(x, y+h, x+w, y+h);                                               // draw bottom of shape
-	// finish this function
+	surface = draw_line(surface, x, y, x, y+h);                                          // draw left side of shape
+	surface = draw_line(surface, x, y+h, x+w, y+h);                                      // draw bottom of shape
+	surface = draw_line(surface, x+w, y, x+w, y+h);                                      // draw right side of shape
+	surface = draw_line(surface, x, y, x+w, y);                                          // draw top of shape
+	return surface;
 }
