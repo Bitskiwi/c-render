@@ -33,7 +33,6 @@ struct canvas reset_canvas(struct canvas surface){                             /
 // CANVAS RENDER
 
 void render_canvas(struct canvas surface){                                     // make a function to draw the canvas to the terminal
-	printf("%c", surface.matrix[0][0]);
 	for(int y = 0; y < surface.h; y++){                                        // iterate through rows until y == h
 		for(int x = 0; x < surface.w; x++){                                    // iterate through coloumns until x == w
 			printf("%c", surface.matrix[y][x]);                                // print the character at (x,y) to terminal
