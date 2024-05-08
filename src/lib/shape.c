@@ -3,8 +3,20 @@
 #include <stdio.h>
 #include "canvas.c"
 
+// DRAW FUNCTION FUNCTION
+
+struct canvas draw_function(struct canvas surface, int slope, int offset){
+	for(int x = 0; x < surface.w; x++){
+		//  y = mx + b == y = slope * x + offset
+		int y = slope * x + offset;
+			plot(surface, '#', x, y);
+	}
+	return surface;
+}
+
 // DRAW LINE FUNCTION
 
+/*
 struct canvas draw_line(struct canvas surface, int x1, int y1, int x2, int y2){          // create a function to draw line to canvas
 	int dx = x2 - x1;                                                          // define distance between first and last x coordinate
 	int dy = y2 - y1;                                                          // define distance between first and last y coordinate
@@ -31,7 +43,7 @@ struct canvas draw_rect(struct canvas surface, int x, int y, int w, int h){    /
 
 // DRAW CIRCLE
 
-struct canvas draw_ellipse(struct canvas surface, int x, int y, int rad){
+struct canvas draw_circ(struct canvas surface, int x, int y, int rad){
 	int t1 = rad / 16;
 	x = rad;
 	y = 0;
@@ -47,3 +59,5 @@ struct canvas draw_ellipse(struct canvas surface, int x, int y, int rad){
 	}
 	return surface;
 }
+
+*/

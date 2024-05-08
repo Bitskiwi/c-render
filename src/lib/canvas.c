@@ -41,9 +41,9 @@ void render_canvas(struct canvas surface){                                     /
 	}
 }
 
-// CANVAS DRAW
+// CANVAS PLOT
 
-struct canvas draw_canvas(struct canvas surface, char subject, int x, int y){  // make a function to write a character to canvas
-	surface.matrix[y][x] = subject;                                            // in surface matrix set the position (x,y) to subject
+struct canvas plot(struct canvas surface, char point, int x, int y){           // make a function to write a character to canvas
+	surface.matrix[y][x] = point;                                              // in surface matrix set the position (x,y) to subject
 	return surface;                                                            // return modified canvas
 }
