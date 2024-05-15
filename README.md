@@ -1,3 +1,3 @@
 # render.c
 ---
-small script to draw stuff to a text based canvas
+small simple package to draw stuff to a text based canvas
