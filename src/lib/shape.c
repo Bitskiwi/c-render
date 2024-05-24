@@ -1,7 +1,6 @@
 // INCLUDES
 
-#include <stdio.h>
-#include "canvas.c"
+#include "shape.h"
 
 // DRAW LINE FUNCTION
 
