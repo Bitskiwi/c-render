@@ -12,7 +12,7 @@ struct canvas {                                                                /
 
 // CANVAS RESET
 
-struct canvas reset_canvas(struct canvas surface);
+struct canvas reset_canvas(struct canvas surface, char fill_char);
 
 // CANVAS RENDER
 
