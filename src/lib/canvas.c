@@ -13,10 +13,10 @@ struct canvas new_canvas(int w, int h){                                        /
 
 // CANVAS RESET
 
-struct canvas reset_canvas(struct canvas surface){                             // function to fill canvas with blank chars
+struct canvas reset_canvas(struct canvas surface, char fill_char){             // function to fill canvas with specified chars
 	for(int y = 0; y < surface.h; y++){                                        // iterate through rows stopping at set height
 		for(int x = 0; x < surface.w; x++){                                    // iterate through coloumns stopping at set width
-			surface.matrix[y][x] = '.';                                        // matrix position (x,y) is now ' ' blank char
+			surface.matrix[y][x] = fill_char;                                  // matrix position (x,y) is now specified char
 		}
 	}
 	return surface;                                                            // return modified canvas
